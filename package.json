@@ -1,0 +1,21 @@
+{
+  "name": "visualization",
+  "version": "1.0.0",
+  "description": "This is visualization project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Visualization"
+  ],
+  "author": "stompesi",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "mysql": "github:mysqljs/mysql",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2"
+  }
+}
