@@ -14,13 +14,13 @@
           <li>
             <p>
               <span class="setting-menu">Gas price</span>
-              <label class="">
-                  <span class="iradio_flat-green" style="position: relative; checked"><input type="radio" checked class="flat" name="gasPrice" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></span> Low &nbsp;&nbsp;&nbsp;
+              <label data-event-changePriceType="low" class="">
+                <span class="iradio_flat-green" style="position: relative; "><input type="radio" class="flat" name="gasPrice" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></span> Low &nbsp;&nbsp;&nbsp;
               </label>
-              <label class="">
-                <span class="iradio_flat-green" style="position: relative;"><input type="radio" class="flat" name="gasPrice" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></span> Avg &nbsp;&nbsp;&nbsp;
+              <label data-event-changePriceType="avg" class="">
+                <span class="iradio_flat-green" style="position: relative; checked;"><input type="radio" checked class="flat" name="gasPrice" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></span> Avg &nbsp;&nbsp;&nbsp;
               </label>
-              <label class="">
+              <label data-event-changePriceType="high" class="">
                 <span class="iradio_flat-green" style="position: relative;"><input type="radio" class="flat" name="gasPrice" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></span> High &nbsp;&nbsp;&nbsp;
               </label>
             </p>
@@ -34,7 +34,7 @@
           </li>
           <li>
             <p>
-              <span class="setting-menu">Decline Color</span>
+              <span class="setting-menu">background Color</span>
               <select id="chart_theme" data-option="chartTheme">
                 <option value="light" selected>Light</option>
                 <option value="dark">Dark</option>
@@ -43,32 +43,32 @@
           </li>
           <li>
             <p>
-              <span class="setting-menu">AM Color</span>
+              <span class="setting-menu">Rally Color</span>
               <input id="am_color" data-option="declineColor" type="color" value="#e74c3c">
             </p>
           </li>
           <li>
             <p>
-              <span class="setting-menu">PM Color</span>
+              <span class="setting-menu">Decline Color</span>
               <input id="pm_color" data-option="rallyColor" type="color" value="#2ecc71">
             </p>
           </li>
           <li>
             <p>
-              <span class="setting-menu">AM border-size</span>
+              <span class="setting-menu">Rally border-size</span>
               <input id="am_border_size" data-option="declineThickness" type="number" value="2">
             </p>
           </li>
           <li>
             <p>
-              <span class="setting-menu">PM border-size</span>
+              <span class="setting-menu">Decline border-size</span>
               <input id="pm_border_size" data-option="rallyThickness" type="number" value="2">
             </p>
           </li>
           <li>
             <p>
               <span class="setting-menu">Animation speed</span>
-              <input id="animation_speed" data-option="animationDurationPerTrend" type="number" value="500">
+              <input id="animation_speed" data-option="animationDurationPerTrend" type="number" value="100">
             </p>
           </li>
           

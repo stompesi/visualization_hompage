@@ -12,7 +12,7 @@ mainChart.init = function () {
     this.option  = {
         width: $('#container').width(),
         height: 300,
-        margin: {top: 30, right: 30, bottom: 50, left: 30},
+        margin: {top: 30, right: 50, bottom: 100, left: 100},
         chartTheme:  "light",
         caption:  "",
         subCaption:  "",
@@ -35,7 +35,7 @@ mainChart.init = function () {
         showRangeTooltips: true,
         showLegend: true,
         showAnimation: true,
-        animationDurationPerTrend: 500, // in seconds
+        animationDurationPerTrend: 100, // in seconds
         animationEase: "linear"
     };
 
@@ -48,9 +48,22 @@ mainChart.init = function () {
     this.draw();
 };
 
+mainChart.updateData = (callback) => {
+    $.ajax({
+        type: "GET",
+        url: `/api/kagiChart/${mainChart.option.type}/${startDate}/${endDate}`,
+        success: function(datas) {
+            mainChart.datas = datas;
+            callback();
+        },
+        error: function(err) {console.log(err)}
+    });
+}
 mainChart.draw = function () {
-    $(this.chartId).html('');
-    KagiChart(data, this.option);
+    mainChart.updateData(function() {
+        $(mainChart.chartId).html('');
+        KagiChart(mainChart.datas, mainChart.option);
+    });
 };
 
 function getCurrentState() {
@@ -83,6 +96,15 @@ function getCurrentState() {
 $(document).on('ready', () => {
     getCurrentState();
     mainChart.init();
+
+    $('[data-event-changePriceType]').on('click', function() {
+        mainChart.option.type = $(this).attr('data-event-changePriceType');
+        mainChart.draw();
+      });
+
+    
+    mainChart.draw();
+      
     // setInterval(getCurrentState, 20000);
 });
 

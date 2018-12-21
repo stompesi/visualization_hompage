@@ -553,7 +553,7 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
         .attr("class", "x axis")
         .attr("transform", translate(0, height))
         .attr("shape-rendering","geometricPrecision")
-        .call(d3.axisBottom(xScale));
+        .call(d3.axisBottom(xScale).ticks(0));
 
     // Add the Y Axis
     svg.append("g")
@@ -606,9 +606,9 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
 
     if(showLegend){
         var legendData = [];
-        legendData.push({category:'AM',color:declineColor});
-        legendData.push({category:'PM',color:rallyColor});
-        legendData.push({category:'Breakout',color:breakPointColor});
+        legendData.push({category:'Rally',color:declineColor});
+        legendData.push({category:'Decline',color:rallyColor});
+        // legendData.push({category:'Breakout',color:breakPointColor});
 
         // add legend
         var legend = svg
@@ -643,8 +643,12 @@ function render_yang_ying_lines(data,width=900,height=400,margin,caption="Captio
        var MM = ((date.getMonth() + 1) < 10 ? '0' : '') + (date.getMonth() + 1);
        // 1970, 1971, ... 2015, 2016, ...
        var yy = (date.getFullYear()).toString();
+
+       var hours = date.getHours();
+       var minutes = date.getMinutes();
+       var seconds = date.getSeconds();
        // create the format you want
-       return (dd + "-" + MM + "-" + yy.substr(-2,2));
+       return (dd + "(" + hours + ":" + minutes + ":" + seconds) + ")";
     }
 }
 

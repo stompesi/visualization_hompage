@@ -1,3 +1,5 @@
+let startDate = parseInt((new Date('10/25/2018')).getTime() / 1000);
+let endDate = parseInt((new Date('10/26/2018')).getTime() / 1000);
 /**
  * Resize function without multiple trigger
  * 
@@ -1220,7 +1222,7 @@ if (typeof NProgress != 'undefined') {
 				  $image.cropper('setCanvasData', canvasData);
 				};
 			  } else if (type === 'radio') {
-				options[name] = $this.val();
+					options[name] = $this.val();
 			  }
 
 			  $image.cropper('destroy').cropper(options);
@@ -1580,7 +1582,7 @@ if (typeof NProgress != 'undefined') {
 
 			var optionSet1 = {
 			  startDate: '10/25/2018',
-			  endDate: '10/25/2018',
+			  endDate: '10/26/2018',
 			  minDate: '10/25/2018',
 			  maxDate: '11/20/2018',
 			  dateLimit: {
@@ -1626,10 +1628,16 @@ if (typeof NProgress != 'undefined') {
 			  console.log("hide event fired");
 			});
 			$('#reportrange').on('apply.daterangepicker', function(ev, picker) {
-				const start = paraseInt(picker.startDate.toDate().getTime() / 1000);
-				const end  = paraseInt(picker.endDate.toDate().getTime() / 1000);
-				pieChart.update(start, end);
+				startDate = parseInt(picker.startDate.toDate().getTime() / 1000);
+				endDate  = parseInt(picker.endDate.toDate().getTime() / 1000);
+				pieChart.update();
+				totalChart.lineChart.update();
+				totalChart.barChart.update();
 				
+				// totalChart2.lineChart.update();
+				// totalChart2.barChart.update();
+
+				mainChart.draw();
 			});
 			$('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
 			  console.log("cancel event fired");
@@ -1658,7 +1666,7 @@ if (typeof NProgress != 'undefined') {
 
 				var optionSet1 = {
 					startDate: '10/25/2018',
-					endDate: '10/25/2018',
+					endDate: '10/26/2018',
 					minDate: '10/25/2018',
 					maxDate: '11/20/2018',
 				  dateLimit: {

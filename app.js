@@ -17,20 +17,3 @@ app.listen(port, function () {
   console.log(`App listening on port ${port}`);
 });
 
-
-var mysql      = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'gkswhdqls',
-  database : 'visualization'
-});
-
-connection.connect();
-
-connection.query('SELECT * FROM MINER_PER_BLOCK LIMIT 1;', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results);
-});
-
-connection.end();
