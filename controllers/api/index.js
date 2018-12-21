@@ -11,7 +11,7 @@ let connection;
 function handleDisconnect() {
   connection = mysql.createConnection(dbConfig);
 
-  connection.conect(function(err) {
+  connection.connect(function(err) {
     if(err){
       console.log('Err : ', err);
       setTimeout(handleDisconnect, 2000);

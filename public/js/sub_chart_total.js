@@ -28,4 +28,4 @@ pieChart.update = function() {
 	});	
 }
 
-// pieChart.update();
+pieChart.update();

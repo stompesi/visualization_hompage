@@ -74,7 +74,11 @@ function getCurrentState() {
       if(lastBlockNumber != data.height) {
         lastBlockNumber = data.height;
         $('#block_height').text(numberWithCommas(lastBlockNumber));
-        $.ajax({
+	$('#block_time').text(numberWithCommas(14.654) + "s");
+	$('#tps').text(numberWithCommas(7.264));
+	$('#hash_rate').text('165.2 TH/s');
+	$('#difficulty').text('2,237.1 T');
+        /*$.ajax({
             type: "GET",
             url: `https://etherchain.org/api/basic_stats`,
             success: function(data) {
@@ -86,6 +90,7 @@ function getCurrentState() {
             },
             error: function(err) {console.log(err)}
           });
+	  */
       }
       $('#unconfirmed_transactions').text(numberWithCommas(data.unconfirmed_count));
     },
