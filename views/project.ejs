@@ -70,7 +70,7 @@
                 <h3>Menus</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-home"></i> Home </span></a></li>
-                  <li><a><i class="fa fa-edit"></i> Project introduction </span></a></li>
+                  <li><a><i class="fa fa-edit active"></i> Project introduction </span></a></li>
                   <li><a><i class="fa fa-desktop"></i> Team introduction </span></a></li>
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
@@ -95,22 +95,17 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
-          <div class="row tile_count">
-              <%- include('./components/status.ejs') %>
-          </div>
-          <!-- /top tiles -->
-
-          <div class="row">
-            <%- include('./components/main_chart.ejs') %>
-            <%- include('./components/setting.ejs') %>
-          </div>
-          <br />
-
-          <div class="row">
-            <%- include('./components/sub_chart_1.ejs') %>
-            <!-- <%- include('./components/sub_chart_2.ejs') %> -->
-            <%- include('./components/sub_chart_total.ejs') %>
-          </div>
+<pre>
+In this project, we visualize the Ethereum network resource usage
+information with multiple kind of charts. We visualize various attributes
+of the Ethereum network resource in a single chart to observe
+the correlation between them. Our system uses MySQL database to
+store and query the Ethereum network data and uses public APIs to
+check current status of the Ethereum network. We use the d3 library
+to draw various kinds of charts with the Ethereum network resource
+data. With our system, the users of the Ethereum can estimate the
+gas price with the certain amount of network resources and time.
+</pre>
         </div>
         <!-- /page content -->
       </div>
